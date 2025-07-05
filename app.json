@@ -1,0 +1,85 @@
+{
+  "expo": {
+    "name": "Jobe",
+    "slug": "ExtraMobile",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "sdkVersion": "53.0.0",
+    "version": "4.1.4",
+    "orientation": "portrait",
+    "primaryColor": "#3B5998",
+    "icon": "./src/assets/images/icon.png",
+    "splash": {
+      "image": "./src/assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "notification": {
+      "icon": "./src/assets/images/icon.png",
+      "color": "#000000",
+      "androidMode": "default"
+    },
+    "updates": {
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "assets/**/*"
+    ],
+    "locales": {
+      "ru": "./src/assets/system-localization/russian.json",
+      "he": "./src/assets/system-localization/hebrew.json"
+    },
+    "android": {
+      "package": "com.ansim.extra",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 27,
+      "permissions": [
+        "CAMERA",
+        "MANAGE_DOCUMENTS",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "https",
+              "host": "apiextra.pythonanywhere.com",
+              "pathPrefix": "/share-task"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "com.extraapp.mobile",
+      "supportsTablet": true,
+      "associatedDomains": [
+        "applinks:apiextra.pythonanywhere.com"
+      ],
+      "infoPlist": {
+        "NSCameraUsageDescription": "App needs access to Camera to take a photo",
+        "NSPhotoLibraryUsageDescription": "App needs access to Camera Roll to pick a photo",
+        "NSLocationWhenInUseUsageDescription": "App needs access to your location to propose you more relevant address hints"
+      },
+      "appleTeamId": "CGDBDJKA39",
+      "buildNumber": "4.1.4"
+    },
+    "plugins": [
+      "expo-localization"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d987c5b7-5770-4ecb-b51d-d1215102574b"
+      }
+    }
+  }
+}

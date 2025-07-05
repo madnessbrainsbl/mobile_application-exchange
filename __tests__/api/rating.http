@@ -1,0 +1,12 @@
+POST http://apiextra.pythonanywhere.com/api/v1/set_rating/29/
+Content-Type: application/json
+Accept: application/json
+Authorization: Token f77ddb7abd3aa83b40908da760ece05be006eb7d
+
+{
+  "by": 29,
+  "mark": 1,
+  "to": 35
+}
+
+###

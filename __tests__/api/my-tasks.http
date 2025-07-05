@@ -1,0 +1,31 @@
+### Get my tasks
+
+GET http://apiextra.pythonanywhere.com/api/v1/get_my_tasks/
+Accept: application/json
+Authorization: Token 99ff3a828c00742081f7fc1af2478b644ee470cf
+
+### Create new task
+
+POST http://apiextra.pythonanywhere.com/api/v1/create_task/
+Content-Type: application/json
+Accept: application/json
+Authorization: Token f77ddb7abd3aa83b40908da760ece05be006eb7d
+
+{
+  "about": "sdfsdfs",
+  "address": "dsfdfdsf",
+  "category": "Повар",
+  "creator": 29,
+  "date_begin": "2019-01-29",
+  "date_end": "2019-01-30",
+  "pay_type": "day",
+  "price": 375,
+  "region": "Север",
+  "sub_category": "Test2",
+  "time_begin": "18:55:00",
+  "time_end": "18:55:00"
+}
+
+
+
+###

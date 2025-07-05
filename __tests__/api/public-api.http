@@ -1,0 +1,11 @@
+GET http://apiextra.pythonanywhere.com/api/v1/get_categories/
+Accept: application/json
+
+###
+
+GET http://apiextra.pythonanywhere.com/api/v1/get_tasks/
+Accept: application/json
+
+<> 2018-12-28T110933.500.txt
+
+###

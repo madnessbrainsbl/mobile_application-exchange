@@ -1,0 +1,32 @@
+### Getting user profile
+
+GET http://apiextra.pythonanywhere.com/api/v1/user/26/
+Content-Type: application/json
+Authorization: Token d4849b2cf71d52b61f13c31e4a7c5aad1ed40f9c
+
+### Updating user profile
+
+PUT http://apiextra.pythonanywhere.com/api/v1/update_profile/
+Content-Type: application/json
+Accept: application/json
+Authorization: Token f77ddb7abd3aa83b40908da760ece05be006eb7d
+
+{
+  "about": "About_dsfkokfk",
+  "experience": "Experience_dfjsdfijf",
+  "study_place": "StudyPlace_dsfjisdjf",
+  "first_name": "FirstName_dsjifsdfji",
+  "last_name": "LastName_sdkfodskf",
+  "city": "City_sdfjsdfiosjdf",
+  "position": "Position_sfjdsjfiodsoijo",
+  "skills": "123",
+  "avatar": null
+}
+
+###
+
+GET http://apiextra.pythonanywhere.com/api/v1/login/
+Accept: application/json
+Authorization: Token 99ff3a828c00742081f7fc1af2478b644ee470cf
+
+###

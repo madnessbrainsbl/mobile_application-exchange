@@ -1,0 +1,24 @@
+### Getting list
+
+GET http://apiextra.pythonanywhere.com/api/v1/get_dialogs/
+Accept: application/json
+Authorization: Token 712dce72f30bd26439bf401125ddc51a1dcabb74
+
+###
+
+GET http://apiextra.pythonanywhere.com/api/v1/create_dialog/11/
+Accept: application/json
+Authorization: Token 99ff3a828c00742081f7fc1af2478b644ee470cf
+
+### Send message
+
+POST http://apiextra.pythonanywhere.com/api/v1/create_message/11/
+Content-Type: application/json
+Accept: application/json
+Authorization: Token 712dce72f30bd26439bf401125ddc51a1dcabb74
+
+{
+  "text_message": "sfsfsdfsdfsdf"
+}
+
+###

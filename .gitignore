@@ -1,0 +1,7 @@
+/.idea
+/.expo
+/.expo-shared
+/node_modules
+/ios
+/android
+.DS_Store

@@ -1,0 +1,5 @@
+{
+    "NSCameraUsageDescription": "אפליקציה Jobe צריך גישה למצלמה שלך",
+    "NSPhotoLibraryUsageDescription": "אפליקציה jobe צריך גישה למצלמה כדי לעשות תמונה",
+    "NSLocationWhenInUseUsageDescription": "לאפליקציה צריך גישה למיקומך כדי להציע לך מסרות רלוונטיות"
+}

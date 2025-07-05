@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "174084724112",
+    "firebase_url": "https://getcook-32733.firebaseio.com",
+    "project_id": "getcook-32733",
+    "storage_bucket": "getcook-32733.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174084724112:android:c5c932f4c72f63e56c8f15",
+        "android_client_info": {
+          "package_name": "com.ansim.extra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174084724112-rcf3brvr69ubts10s6642h92l7ccklud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU3r7EQEkcO73AFTL76vPxOpt2hlj2QM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174084724112-rcf3brvr69ubts10s6642h92l7ccklud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

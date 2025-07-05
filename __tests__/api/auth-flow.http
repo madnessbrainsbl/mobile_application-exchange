@@ -1,0 +1,29 @@
+POST http://apiextra.pythonanywhere.com/api/v1/create_user/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "first_name": "Пипка",
+  "phone": 817026713349,
+  "username": "817026713349",
+  "account_type": "creator",
+  "push_id": "test"
+}
+
+###
+
+GET http://apiextra.pythonanywhere.com/api/v1/send_sms_code/817026713349
+Accept: application/json
+
+###
+
+POST http://apiextra.pythonanywhere.com/auth/token/login/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "password": "6758",
+  "username": "817026713349"
+}
+
+###

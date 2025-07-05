@@ -1,0 +1,7 @@
+###
+
+GET http://apiextra.pythonanywhere.com/api/v1/block/user/25/
+Accept: application/json
+Authorization: Token d4849b2cf71d52b61f13c31e4a7c5aad1ed40f9c
+
+###
