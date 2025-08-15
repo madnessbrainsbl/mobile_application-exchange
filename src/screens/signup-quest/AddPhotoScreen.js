@@ -24,8 +24,7 @@ import {SimpleButton} from "../../components/Buttons";
 import Color from '../../constant/Color';
 import { connect } from 'react-redux';
 import { updateProfile } from '../../redux/profile/handlers';
-import { Notifications as ExpoNotifications } from 'expo';
-import * as Notifications from 'expo-notifications';
+import NotificationHelper from '../../utils/NotificationHelper';
 
 const styles = StyleSheet.create({
     title: {
@@ -213,11 +212,11 @@ class AddPhotoScreen extends React.Component {
     }
 
     getPermissions = async() => {
-        const { status: existingStatus } = await Notifications.getPermissionsAsync();
+        const { status: existingStatus } = await NotificationHelper.getPermissionsAsync();
         let finalStatus = existingStatus;
 
         if (existingStatus !== 'granted') {
-            const { status } = await Notifications.requestPermissionsAsync();
+            const { status } = await NotificationHelper.requestPermissionsAsync();
             finalStatus = status;
         }
         return finalStatus === 'granted';

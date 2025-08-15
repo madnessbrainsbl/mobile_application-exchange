@@ -4,7 +4,7 @@ import {
     TouchableOpacity,
     Text
 } from 'react-native';
-import { AppLoading, Notifications } from "expo";
+import { AppLoading } from "expo";
 import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 import { FontAwesome } from "@expo/vector-icons";
@@ -74,6 +74,7 @@ import iOSNotification from './src/components/iOSNotification';
 import MyToast from './src/components/MyToast';
 import LanguageSelectorDialog from './src/components/LanguageSelectorDialog';
 import { LanguageDialogHandler } from './src/components/LanguageSelectorDialog';
+import NotificationHelper from './src/utils/NotificationHelper';
 import { HeaderTextButton } from './src/components/Buttons';
 import strings from './src/utils/Strings';
 
@@ -357,6 +358,17 @@ const RootStack = () => (
 // }
 
 export default function App() {
+    // Initialize notification handler for foreground notifications
+    React.useEffect(() => {
+        NotificationHelper.setNotificationHandler({
+            handleNotification: async () => ({
+                shouldShowAlert: true,
+                shouldPlaySound: false,
+                shouldSetBadge: false,
+            }),
+        });
+    }, []);
+
     return (
         <Provider store={store}>
         <NavigationContainer>

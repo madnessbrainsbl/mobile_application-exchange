@@ -23,12 +23,11 @@ import {
     Platform,
     Alert
 } from "react-native";
-import { Notifications as ExpoNotifications } from 'expo';
-import * as Notifications from 'expo-notifications';
 import strings from "../../utils/Strings";
 import API from "../../api";
 import Storage from "../../utils/Storage";
 import Color from "../../constant/Color";
+import NotificationHelper from "../../utils/NotificationHelper";
 
 import { connect } from 'react-redux';
 import { updateProfile } from '../../redux/profile/handlers';
@@ -144,7 +143,7 @@ class SignInScreen extends React.Component {
 
         const allowNotifications = await this.getPermissions();
         // if (allowNotifications) {
-        //     token = await Notifications.getExpoPushTokenAsync();
+        //     token = await NotificationHelper.getExpoPushTokenAsync();
         // }
 
         this.setState({ token })
@@ -208,11 +207,11 @@ class SignInScreen extends React.Component {
 
 
     getPermissions = async() => {
-        const { status: existingStatus } = await Notifications.getPermissionsAsync();
+        const { status: existingStatus } = await NotificationHelper.getPermissionsAsync();
         let finalStatus = existingStatus;
 
         if (existingStatus !== 'granted') {
-            const { status } = await Notifications.requestPermissionsAsync();
+            const { status } = await NotificationHelper.requestPermissionsAsync();
             finalStatus = status;
         }
         return finalStatus === 'granted';

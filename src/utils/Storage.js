@@ -46,7 +46,9 @@ class Storage {
 
         let language = await AsyncStorage.getItem(KEYS.LANG_KEY);
         if (!language) {
-            language = Localization.locale.split("-")[0];
+            // Safely handle locale parsing
+            const systemLocale = Localization.locale || Localization.locales?.[0] || "en-US";
+            language = systemLocale.split("-")[0];
             if (strings.getAvailableLanguages().indexOf(language) === -1)
                 language = "en";
         }

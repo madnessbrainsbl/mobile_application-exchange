@@ -29,8 +29,7 @@ import Triangle from '../../assets/images/triangle.png'
 import API from '../../api';
 import {isCurrentAppVersionLowerThan} from '../../utils/Helpers';
 
-import { Notifications as ExpoNotifications } from 'expo';
-import * as Notifications from 'expo-notifications';
+import NotificationHelper from '../../utils/NotificationHelper';
 
 import { connect } from 'react-redux';
 import { getTasks, getMoreTasks, getCategories, applyQuickFilter } from '../../redux/task-handlers';
@@ -162,11 +161,11 @@ class MainTaskListScreen extends React.Component {
     
 
     registerForPushNotificationsAsync = async () => {
-        const { status: existingStatus } = await Notifications.getPermissionsAsync();
+        const { status: existingStatus } = await NotificationHelper.getPermissionsAsync();
         let finalStatus = existingStatus;
 
         if (existingStatus !== 'granted') {
-            const { status } = await Notifications.requestPermissionsAsync();
+            const { status } = await NotificationHelper.requestPermissionsAsync();
             finalStatus = status;
         }
 
@@ -174,19 +173,12 @@ class MainTaskListScreen extends React.Component {
             return;
         }
 
-        //token = await Notifications.getExpoPushTokenAsync();
+        //token = await NotificationHelper.getExpoPushTokenAsync();
         const {userProfile} = this.props;
         const lang = await settings.getLanguage();
         //await BackendAPI.updateToken(userProfile.id, token, lang);
 
-        // if (Platform.OS === 'android') {
-        //     Notifications.createChannelAndroidAsync('default', {
-        //         name: 'default',
-        //         sound: true,
-        //         priority: 'max',
-        //         vibrate: [0, 250, 250, 250],
-        //     });
-        // }
+        // Android notification channel creation is handled automatically in newer versions
     };
 
     setLang = async() => {

@@ -26,7 +26,7 @@ import Storage from '../utils/Storage';
 import strings from "../utils/Strings";
 import Avatar from "./Avatar";
 // import MyToast from "../../components/MyToast";
-import { Linking, Notifications } from 'expo';
+import { Linking } from 'expo';
 import iOSNotification from './iOSNotification';
 import { CommonActions } from '@react-navigation/native';
 import { connect } from 'react-redux';
@@ -37,8 +37,7 @@ import {LanguageDialogHandler} from './LanguageSelectorDialog';
 import { updateProfile } from '../redux/profile/handlers';
 import { updateLanguage } from '../redux/config/handlers';
 import API from '../api';
-import { Notifications as ExpoNotifications } from 'expo';
-import * as ExpoNotificationsModule from 'expo-notifications';
+import NotificationHelper from '../utils/NotificationHelper';
 
 const unit = val => val * 0.75;
 const style = StyleSheet.create({
@@ -119,7 +118,7 @@ class DrawerMenu extends React.Component {
 
         Linking.addEventListener('url', this.watchUrl);
 
-        this.notificationSubscription = ExpoNotificationsModule.addListener(this.handleInAppNotification);
+        this.notificationSubscription = NotificationHelper.addNotificationReceivedListener(this.handleInAppNotification);
 
         AppState.addEventListener('change', this._handleAppStateChange);
 
@@ -135,11 +134,11 @@ class DrawerMenu extends React.Component {
     }
 
     getPermissions = async() => {
-        const { status: existingStatus } = await ExpoNotificationsModule.getPermissionsAsync();
+        const { status: existingStatus } = await NotificationHelper.getPermissionsAsync();
         let finalStatus = existingStatus;
 
         if (existingStatus !== 'granted') {
-            const { status } = await ExpoNotificationsModule.requestPermissionsAsync();
+            const { status } = await NotificationHelper.requestPermissionsAsync();
             finalStatus = status;
         }
         return finalStatus === 'granted';

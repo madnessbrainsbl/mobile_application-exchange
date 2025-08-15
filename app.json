@@ -23,7 +23,8 @@
     },
     "updates": {
       "checkAutomatically": "ON_LOAD",
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/d987c5b7-5770-4ecb-b51d-d1215102574b"
     },
     "assetBundlePatterns": [
       "assets/**/*"
@@ -68,7 +69,8 @@
       "infoPlist": {
         "NSCameraUsageDescription": "App needs access to Camera to take a photo",
         "NSPhotoLibraryUsageDescription": "App needs access to Camera Roll to pick a photo",
-        "NSLocationWhenInUseUsageDescription": "App needs access to your location to propose you more relevant address hints"
+        "NSLocationWhenInUseUsageDescription": "App needs access to your location to propose you more relevant address hints",
+        "ITSAppUsesNonExemptEncryption": false
       },
       "appleTeamId": "CGDBDJKA39",
       "buildNumber": "4.1.4"
@@ -80,6 +82,9 @@
       "eas": {
         "projectId": "d987c5b7-5770-4ecb-b51d-d1215102574b"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
